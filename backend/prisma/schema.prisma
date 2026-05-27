@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Severity is stored as plain text and validated at the application boundary
+// via zod (see @dave/shared). Keeping it out of the DB enum lets us add new
+// severity levels without a migration.
+model Incident {
+  id         String    @id
+  serviceId  String    @map("service_id")
+  startedAt  DateTime  @map("started_at")
+  resolvedAt DateTime? @map("resolved_at")
+  severity   String
+  title      String
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+
+  @@index([serviceId])
+  @@index([startedAt(sort: Desc)])
+  @@map("incidents")
+}
+
+// Status is stored as plain text and validated at the application boundary.
+// A partial unique index on `status='running'` (added in a custom SQL
+// migration) enforces "at most one in-flight ingest at a time" at the DB
+// level, so the concurrency guard is not a race.
+model IngestRun {
+  id          String    @id @default(uuid())
+  startedAt   DateTime  @default(now()) @map("started_at")
+  finishedAt  DateTime? @map("finished_at")
+  status      String
+  summary     Json?
+
+  @@index([startedAt(sort: Desc)])
+  @@map("ingest_runs")
+}

@@ -1,0 +1,37 @@
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.idle {
+  background: var(--status-idle);
+}
+.running {
+  background: var(--status-running);
+}
+.ok {
+  background: var(--status-ok);
+}
+.warn {
+  background: var(--status-warn);
+}
+.error {
+  background: var(--status-error);
+}
+
+.pulse {
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

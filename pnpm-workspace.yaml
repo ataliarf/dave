@@ -1,0 +1,24 @@
+packages:
+  - "shared"
+  - "backend"
+  - "frontend"
+
+verifyDepsBeforeRun: false
+strictDepBuilds: false
+
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+  '@prisma/client': set this to true or false
+  '@prisma/engines': set this to true or false
+  esbuild: set this to true or false
+  prisma: set this to true or false
+
+# Allow lifecycle (postinstall) scripts for these packages.
+# Prisma needs this to download its query engine; esbuild needs to install
+# its native binary.
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - esbuild
+  - prisma

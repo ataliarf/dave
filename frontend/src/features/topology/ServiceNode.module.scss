@@ -1,0 +1,149 @@
+@use "../../styles/mixins" as m;
+
+.node {
+  position: relative;
+  width: 200px;
+  height: 64px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    box-shadow 120ms ease,
+    transform 120ms ease,
+    opacity 160ms ease;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.stripe {
+  width: 4px;
+  background: var(--team-stripe, var(--team-1));
+  flex-shrink: 0;
+}
+
+.body {
+  flex: 1 1 auto;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 600;
+  font-size: var(--fs-base);
+  color: var(--text);
+  @include m.ellipsis;
+}
+
+.meta {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.handle {
+  width: 6px;
+  height: 6px;
+  background: var(--text-subtle);
+  border: 0;
+}
+
+/* Tier fills (subtle background tint) */
+.tier_critical {
+  background: var(--tier-critical-soft);
+  border-color: rgba(185, 28, 28, 0.3);
+}
+.tier_standard {
+  background: var(--tier-standard-soft);
+  border-color: rgba(29, 78, 216, 0.3);
+}
+.tier_experimental {
+  background: var(--tier-experimental-soft);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.boundary {
+  opacity: 0.4;
+  border-style: dashed;
+}
+
+.selected {
+  box-shadow:
+    0 0 0 3px var(--accent),
+    var(--shadow-md);
+}
+
+.blastOrigin {
+  box-shadow:
+    0 0 0 3px var(--blast-origin),
+    var(--shadow-md);
+}
+.blastUpstream {
+  box-shadow:
+    0 0 0 2px var(--blast-upstream),
+    var(--shadow-sm);
+}
+.blastDownstream {
+  box-shadow:
+    0 0 0 2px var(--blast-downstream),
+    var(--shadow-sm);
+}
+.blastFaded {
+  opacity: var(--blast-faded-opacity);
+}
+
+.expandBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-1);
+  color: var(--text-muted);
+  line-height: 0;
+  cursor: pointer;
+  opacity: 0.85;
+  transition:
+    background 120ms ease,
+    color 120ms ease,
+    opacity 120ms ease,
+    border-color 120ms ease;
+  @include m.focus-ring;
+
+  &:hover:not(:disabled) {
+    background: var(--surface-2);
+    color: var(--text);
+    border-color: var(--border-strong);
+    opacity: 1;
+  }
+
+  &:disabled {
+    cursor: progress;
+    opacity: 0.6;
+  }
+}
+
+.expandIcon {
+  display: block;
+  width: 8px;
+  height: 8px;
+  fill: currentColor;
+}

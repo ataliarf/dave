@@ -1,0 +1,31 @@
+{
+  "name": "daveio-engineering-assignment",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10"
+  },
+  "packageManager": "pnpm@11.3.0",
+  "scripts": {
+    "dev": "pnpm --filter @dave/backend dev",
+    "dev:frontend": "pnpm --filter @dave/frontend dev",
+    "dev:all": "concurrently -n be,fe -c blue,magenta \"pnpm dev\" \"pnpm dev:frontend\"",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,cjs,json,scss,css,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,cjs,json,scss,css,md}\"",
+    "prisma:migrate": "pnpm --filter @dave/backend prisma:migrate",
+    "prisma:generate": "pnpm --filter @dave/backend prisma:generate"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher"
+    ]
+  }
+}

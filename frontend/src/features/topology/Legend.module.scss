@@ -1,0 +1,105 @@
+.legend {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--sp-3);
+  display: flex;
+  gap: var(--sp-5);
+  font-size: var(--fs-xs);
+  box-shadow: var(--shadow-sm);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.h {
+  margin: 0 0 2px;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text);
+  }
+}
+
+.swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid var(--border-strong);
+}
+
+.tCrit {
+  background: var(--tier-critical-soft);
+  border-color: var(--tier-critical);
+}
+.tStd {
+  background: var(--tier-standard-soft);
+  border-color: var(--tier-standard);
+}
+.tExp {
+  background: var(--tier-experimental-soft);
+  border-color: var(--tier-experimental);
+}
+
+%line {
+  display: inline-block;
+  width: 28px;
+  height: 0;
+  border-top-color: var(--text-muted);
+  border-top-style: solid;
+}
+
+.lineSolid {
+  @extend %line;
+  border-top-width: 2px;
+}
+
+.lineDashed {
+  @extend %line;
+  border-top-width: 2px;
+  border-top-style: dashed;
+}
+
+.lineDotted {
+  @extend %line;
+  border-top-width: 2px;
+  border-top-style: dotted;
+}
+
+.lineLong {
+  @extend %line;
+  border-top-width: 2px;
+  border-top-style: dashed;
+  border-image: repeating-linear-gradient(to right, currentColor 0 10px, transparent 10px 14px) 1;
+}
+
+.lineThick {
+  @extend %line;
+  border-top-width: 3px;
+}
+.lineMed {
+  @extend %line;
+  border-top-width: 2px;
+}
+.lineThin {
+  @extend %line;
+  border-top-width: 1px;
+}

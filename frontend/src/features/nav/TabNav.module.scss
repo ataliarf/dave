@@ -1,0 +1,63 @@
+@use "../../styles/mixins" as m;
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  height: var(--tabs-h);
+  flex-shrink: 0;
+  padding: 0 var(--sp-5);
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--sp-4);
+  margin-right: var(--sp-2);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 120ms ease,
+    border-color 120ms ease;
+  @include m.focus-ring;
+
+  &:hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+}
+
+.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.disabled {
+  color: var(--text-subtle);
+  cursor: not-allowed;
+  opacity: 0.65;
+
+  &:hover {
+    color: var(--text-subtle);
+    border-bottom-color: transparent;
+  }
+}
+
+.badge {
+  margin-left: var(--sp-2);
+  padding: 0 6px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-subtle);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  line-height: 18px;
+}

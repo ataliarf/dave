@@ -1,0 +1,21 @@
+id,service_id,started_at,resolved_at,severity,title
+inc-001,auth-service,2026-04-12T03:14:00Z,2026-04-12T03:42:00Z,sev2,Token validation latency spike after KMS rotation
+inc-002,payments-worker,2026-04-28T14:02:00Z,2026-04-28T16:11:00Z,sev1,Stripe webhook backlog after upstream incident
+inc-003,search-indexer,2026-05-02T09:30:00Z,2026-05-02T11:05:00Z,sev3,Indexing job stalled on shard rebalance
+inc-004,user-service,2026-05-09T22:18:00Z,,sev2,Elevated 5xx rate after deploy v2.41.0
+inc-005,api-gateway,2026-05-14T10:45:00Z,2026-05-14T10:58:00Z,sev2,Brief outage from bad config push
+inc-006,ml-recommendations,2026-05-17T07:00:00Z,,sev4,Drifted recommendation quality on similar-users cohort
+inc-007,notifications-service,2026-05-19T18:22:00Z,2026-05-19T19:00:00Z,sev3,Email throttling from SES burst
+inc-008,billing-service,2026-05-20T13:11:00Z,,sev3,Currency rounding error on invoices over 10k USD
+inc-009,subscription-service,2026-05-21T16:40:00Z,2026-05-21T17:22:00Z,sev3,Webhook retries piling up after partner timeout
+inc-010,analytics-ingest,2026-05-22T08:05:00Z,,sev4,Lag on event pipeline; backfill running
+inc-011,web-app,2026-04-18T11:23:00Z,2026-04-18T11:55:00Z,sev3,Static asset CDN cache poisoning after release
+inc-012,mobile-bff,2026-04-25T19:08:00Z,2026-04-25T20:14:00Z,sev2,GraphQL N+1 regression slowed home feed
+inc-013,feature-flags,2026-05-04T06:42:00Z,2026-05-04T07:01:00Z,sev1,Stale flag cache returned global kill-switch true
+inc-014,invoicing-service,2026-05-08T15:30:00Z,2026-05-08T18:12:00Z,sev3,PDF generation timeouts on bulk monthly run
+inc-015,email-worker,2026-05-13T09:17:00Z,2026-05-13T09:48:00Z,sev3,SMTP connection pool exhaustion during marketing blast
+inc-016,search-service,2026-05-15T12:55:00Z,2026-05-15T14:20:00Z,sev2,Query latency p99 above SLO after index reload
+inc-017,analytics-api,2026-05-18T20:11:00Z,,sev4,Schema mismatch on legacy v1 events endpoint
+inc-018,audit-log,2026-05-23T02:30:00Z,2026-05-23T03:05:00Z,sev3,Write amplification spike after retention policy change
+inc-019,push-worker,2026-05-24T11:45:00Z,,sev3,APNs token rejection rate elevated after iOS 18 push
+inc-020,reporting-service,2026-05-25T14:09:00Z,2026-05-25T15:30:00Z,sev4,Scheduled report generation skipped due to cron misfire

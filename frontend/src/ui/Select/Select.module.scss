@@ -1,0 +1,33 @@
+@use "../../styles/mixins" as m;
+
+.wrap {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--fs-sm);
+}
+
+.label {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+.select {
+  height: 32px;
+  min-width: 180px;
+  padding: 0 var(--sp-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface-1);
+  font-size: var(--fs-base);
+  color: var(--text);
+  cursor: pointer;
+  @include m.focus-ring;
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+}

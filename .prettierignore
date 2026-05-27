@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+.next
+coverage
+.turbo
+.pnpm-store
+pnpm-lock.yaml
+data/*.jsonl
+data/*.csv
+backend/prisma/migrations
+shared/dist
+frontend/dist
+backend/dist

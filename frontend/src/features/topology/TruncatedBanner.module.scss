@@ -1,0 +1,15 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: 6px var(--sp-4);
+  background: var(--status-warn-soft);
+  color: var(--status-warn);
+  font-size: var(--fs-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+.text {
+  text-align: center;
+}

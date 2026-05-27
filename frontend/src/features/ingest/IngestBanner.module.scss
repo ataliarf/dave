@@ -1,0 +1,70 @@
+@use "../../styles/mixins" as m;
+
+.bannerColumn {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: var(--banner-h);
+  flex-shrink: 0;
+  padding: 0 var(--sp-5);
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--border);
+  z-index: m.$z-banner;
+
+  .bannerColumn & {
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.text {
+  flex: 1 1 auto;
+  font-size: var(--fs-md);
+  color: var(--text);
+
+  strong {
+    color: var(--text);
+  }
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.idle {
+  background: var(--status-idle-soft);
+}
+
+.running {
+  background: var(--status-running-soft);
+}
+
+.succeeded {
+  background: var(--status-ok-soft);
+}
+
+.partial {
+  background: var(--status-warn-soft);
+}
+
+.failed {
+  background: var(--status-error-soft);
+}
+
+.expanded {
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}

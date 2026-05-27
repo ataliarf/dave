@@ -1,0 +1,60 @@
+@use "../../styles/mixins" as m;
+
+.group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.legend {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-subtle);
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: var(--sp-1);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 4px 6px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background: var(--surface-2);
+  }
+}
+
+.input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: var(--accent);
+  @include m.focus-ring;
+}
+
+.label {
+  font-size: var(--fs-md);
+  color: var(--text);
+  @include m.ellipsis;
+}
+
+.empty {
+  font-size: var(--fs-sm);
+  color: var(--text-subtle);
+  font-style: italic;
+}

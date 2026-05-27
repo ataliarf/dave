@@ -1,0 +1,74 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.tierCritical {
+  background: var(--tier-critical-soft);
+  color: var(--tier-critical);
+  border-color: rgba(185, 28, 28, 0.18);
+}
+.tierStandard {
+  background: var(--tier-standard-soft);
+  color: var(--tier-standard);
+  border-color: rgba(29, 78, 216, 0.18);
+}
+.tierExperimental {
+  background: var(--tier-experimental-soft);
+  color: var(--tier-experimental);
+  border-color: rgba(124, 58, 237, 0.18);
+}
+
+.sev1 {
+  background: var(--sev-1-soft);
+  color: var(--sev-1);
+  border-color: rgba(185, 28, 28, 0.18);
+}
+.sev2 {
+  background: var(--sev-2-soft);
+  color: var(--sev-2);
+  border-color: rgba(234, 88, 12, 0.18);
+}
+.sev3 {
+  background: var(--sev-3-soft);
+  color: var(--sev-3);
+  border-color: rgba(202, 138, 4, 0.18);
+}
+.sev4 {
+  background: var(--sev-4-soft);
+  color: var(--sev-4);
+  border-color: rgba(107, 114, 128, 0.22);
+}
+
+.neutral {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+.team {
+  background: var(--surface-1);
+  color: var(--text);
+  border-color: var(--border);
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.teamDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}

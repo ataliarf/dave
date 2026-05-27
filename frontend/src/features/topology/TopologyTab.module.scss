@@ -1,0 +1,50 @@
+.layout {
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 0;
+}
+
+.main {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.loading {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  color: var(--text-muted);
+  font-size: var(--fs-md);
+}
+
+.error {
+  margin: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--status-error-soft);
+  color: var(--status-error);
+  border: 1px solid var(--status-error);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+}
+
+.fetching {
+  position: absolute;
+  bottom: var(--sp-3);
+  left: var(--sp-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  z-index: 5;
+}
