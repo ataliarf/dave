@@ -11,6 +11,7 @@ cp .env.example .env
 docker compose up -d
 pnpm install
 pnpm prisma:generate && pnpm prisma:migrate
+pnpm neo4j:migrate
 pnpm dev:all
 ```
 
@@ -55,7 +56,10 @@ Copy `.env.example` to `.env`. The defaults work for local dev — they match
 ## Stores
 
 - **Neo4j** — services + directed dependencies. Blast radius is a Cypher
-  query.
+  query. Schema (constraints/indexes) lives in
+  `backend/neo4j/migrations/` and is applied via `pnpm neo4j:migrate`
+  (morpheus4j, Flyway-style versioned `.cypher` files). The server no
+  longer touches schema at boot.
 - **Postgres** — incidents + ingest run history. Prisma-managed schema.
 
 ## Pictures

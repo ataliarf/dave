@@ -1,6 +1,6 @@
 import { createApp } from "./app.js";
 import { env } from "./config/env.js";
-import { applyNeo4jConstraints, closeNeo4j, verifyNeo4jConnectivity } from "./db/neo4j.js";
+import { closeNeo4j, verifyNeo4jConnectivity } from "./db/neo4j.js";
 import { disconnectPrisma, prisma } from "./db/prisma.js";
 import { logger } from "./lib/logger.js";
 
@@ -9,7 +9,6 @@ async function bootstrap(): Promise<void> {
   logger.info("Postgres connected");
 
   await verifyNeo4jConnectivity();
-  await applyNeo4jConstraints();
   logger.info("Neo4j connected");
 
   const app = createApp();

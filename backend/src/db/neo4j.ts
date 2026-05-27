@@ -23,15 +23,6 @@ export async function verifyNeo4jConnectivity(): Promise<void> {
   await getNeo4jDriver().verifyConnectivity();
 }
 
-export async function applyNeo4jConstraints(): Promise<void> {
-  await withSession(async (session) => {
-    await session.run(
-      "CREATE CONSTRAINT service_id_unique IF NOT EXISTS FOR (s:Service) REQUIRE s.id IS UNIQUE",
-    );
-  });
-  logger.info("Neo4j constraints applied");
-}
-
 export async function closeNeo4j(): Promise<void> {
   if (driver) {
     try {

@@ -11,7 +11,10 @@
     "prisma:generate": "dotenv -e ../.env -- prisma generate",
     "prisma:migrate": "dotenv -e ../.env -- prisma migrate dev",
     "prisma:deploy": "dotenv -e ../.env -- prisma migrate deploy",
-    "prisma:studio": "dotenv -e ../.env -- prisma studio"
+    "prisma:studio": "dotenv -e ../.env -- prisma studio",
+    "neo4j:migrate": "node scripts/neo4j-migrate.mjs migrate",
+    "neo4j:info": "node scripts/neo4j-migrate.mjs info",
+    "neo4j:validate": "node scripts/neo4j-migrate.mjs validate"
   },
   "dependencies": {
     "@dave/shared": "workspace:*",
@@ -28,6 +31,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.5",
     "dotenv-cli": "^7.4.4",
+    "morpheus4j": "^4.5.2",
     "pino-pretty": "^13.0.0",
     "prisma": "^6.1.0",
     "tsup": "^8.3.5",
